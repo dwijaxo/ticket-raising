@@ -29,6 +29,7 @@ function Table() {
                     username={nm.username}
                     product={nm.product}
                     code={nm.code}
+                    domain={nm.domain}
                   />
                 ))}
               </table>

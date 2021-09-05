@@ -42,6 +42,7 @@ function RaiseTicketForm() {
         username: formData.username,
         product: formData.product,
         code: formData.code,
+        domain: formData.domain,
         body: ticketBody,
       })
       .then(() => {
@@ -63,7 +64,7 @@ function RaiseTicketForm() {
             htmlFor="department-label"
             className="form-label text-lg text-gray-600"
           >
-            Enter your Department
+            Name
           </label>{" "}
           <br />
           <input
@@ -71,7 +72,7 @@ function RaiseTicketForm() {
             value={formData.username}
             type="text"
             id="username"
-            placeholder="Username"
+            placeholder="Name"
             name="username"
             className="form-input mt-2 w-11/12 border-2 rounded p-2"
           />
@@ -111,6 +112,26 @@ function RaiseTicketForm() {
             name="code"
             className="form-input mt-2 w-11/12 border-2 rounded p-2"
           />
+          
+        </div>
+        <div className="departhment pt-6">
+          <label
+            htmlFor="department-label"
+            className="form-label text-lg text-gray-600"
+          >
+            Domain
+          </label>{" "}
+          <br />
+          <input
+            onChange={handleChange}
+            value={formData.domain}
+            type="text"
+            id="domain"
+            placeholder="Tech/Design/Finance"
+            name="domain"
+            className="form-input mt-2 w-11/12 border-2 rounded p-2"
+          />
+          
         </div>
         <div className="md:container md:mx-auto mt-10">
           <p className="text-lg text-gray-600 pb-4">Ticket Body</p>

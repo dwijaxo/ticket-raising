@@ -18,14 +18,14 @@ function NavBar() {
           </button> */}
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          {/* <div className="text-sm lg:flex-grow">
+          <div className=" text-right text-sm lg:flex-grow">
             <a
               href="#responsive-header"
-              className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4"
+              className="  block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4 "
             >
-              Docs
+              Log out
             </a>
-            <a
+            {/* <a
               href="#responsive-header"
               className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4"
             >
@@ -36,8 +36,8 @@ function NavBar() {
               className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300"
             >
               Blog
-            </a>
-          </div> */}
+            </a> */}
+          </div>
         </div>
       </nav>
     </div>

@@ -11,6 +11,7 @@ function TableHeader()
           <th className="py-3 px-6 text-left">Username</th>
           <th className="py-3 px-6 text-left">Product</th>
           <th className="py-3 px-6 text-left">Product Code</th>
+          <th className="py-3 px-6 text-left">Domain</th>
           <th className="py-3 px-6 text-left">Ticket Body</th>
         </tr>
       </thead>
