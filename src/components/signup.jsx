@@ -4,10 +4,12 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FirebaseContext } from "../contexts/FirebaseContext";
 import { useContext } from "react";
+import {db} from '../firebase'
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [domain, setDomain] = useState("");
   const history = useHistory();
 
   const [emailemp, setEmailemp] = useState("");
@@ -31,7 +33,11 @@ export default function SignUp() {
               firebase
                 .auth()
                 .createUserWithEmailAndPassword(email, password)
-                .then(() => alert("Signed Up!"))
+                .then(() => 
+                {db.collection('test').add({
+                  email,
+                })
+                history.push("/admin")})
                 .catch((error) => alert(error.message));
               setEmail("");
               setPassword("");

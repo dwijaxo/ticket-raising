@@ -3,12 +3,13 @@ import MyEditor from "./components/editor";
 import NavBar from "./components/navbar";
 import RaiseTicketForm from "./components/raiseTicketForm";
 import Table from "./components/table";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import SignUp from "./components/signup";
 import Example from "./components/dropdown";
 import {useState, useEffect} from "react";
 import LogInAdmin from "./components/LogInAdmin";
+import TicketBody from "./components/TicketBody";
 
 
 
@@ -16,16 +17,19 @@ function App() {
   return (
     <Router>
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
-        <Route path="/"> </Route>
+        <Route path="/employee" ><RaiseTicketForm /></Route>
+        <Route path="/admin" ><Table /></Route>
+        <Route path="/" ><SignUp /></Route>
       </Switch>
     {/* <NavBar /> */}
     {/* <RaiseTicketForm /> */}
     {/* <Table /> */}
-    <SignUp />
+    {/* <SignUp /> */}
     {/* <LogInAdmin /> */}
     {/* <Example /> */}
+    {/* <TicketBody /> */}
      </div>
      </Router>
   );
