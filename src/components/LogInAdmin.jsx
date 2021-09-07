@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./index.css";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState  } from "react";
 import "./index.css";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -18,7 +18,7 @@ export default function SignUp() {
 
   const { firebase } = useContext(FirebaseContext);
 
-  const auth = useAuth();
+  // const auth = useAuth();
 
   return (
     <div className="bg-grey-100 min-h-screen flex items-center justify-center">
