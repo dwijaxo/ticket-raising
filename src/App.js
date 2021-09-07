@@ -10,6 +10,7 @@ import Example from "./components/dropdown";
 import {useState, useEffect} from "react";
 import LogInAdmin from "./components/LogInAdmin";
 import TicketBody from "./components/TicketBody";
+import LogInEmp from "./components/LogInEmp";
 
 
 
@@ -21,6 +22,8 @@ function App() {
       <Switch>
         <Route path="/employee" ><RaiseTicketForm /></Route>
         <Route path="/admin" ><Table /></Route>
+        <Route path="/loginadmin" ><LogInAdmin /></Route>
+        <Route path="/loginemployee" ><LogInEmp /></Route>
         <Route path="/" ><SignUp /></Route>
       </Switch>
     {/* <NavBar /> */}
@@ -30,6 +33,7 @@ function App() {
     {/* <LogInAdmin /> */}
     {/* <Example /> */}
     {/* <TicketBody /> */}
+    {/* <LogInEmp /> */}
      </div>
      </Router>
   );

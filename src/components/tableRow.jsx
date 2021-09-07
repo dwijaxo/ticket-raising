@@ -20,7 +20,8 @@ function TableRow(props)
                       <p className="font-medium">{props.domain}</p>
                     </td>
                     <td className="py-3 px-6 text-left whitespace-nowrap">
-                      <p className="font-medium"><a className="text-blue-600" href="">Click Here</a></p>
+                      {/* <p className="font-medium"><a className="text-blue-600" href="">Click Here</a></p> */}
+                      <p className="font-medium">{props.body}</p>
                     </td>
                   </tr>
                 </tbody>

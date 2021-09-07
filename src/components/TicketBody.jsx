@@ -9,7 +9,7 @@ function TicketBody() {
             <p className="text-3xl">Ticket Body</p>
             <div className="bg-white shadow-md rounded my-6">
               <div className="container  pl-6">
-                
+                {/* body={nm.body} */}
               </div>
             </div>
           </div>

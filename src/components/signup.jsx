@@ -4,7 +4,8 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FirebaseContext } from "../contexts/FirebaseContext";
 import { useContext } from "react";
-import {db} from '../firebase'
+import {db} from '../firebase';
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -74,12 +75,18 @@ export default function SignUp() {
           </form>
           <div className="text-grey-dark mt-6">
             Already have an account?
-            <a
+            <Link
+              to={"/loginadmin"}
+              className="no-underline border-b border-indigo-900 text-indigo-900"
+            >
+              Log In
+            </Link>
+            {/* <a
               className="no-underline border-b border-indigo-900 text-indigo-900"
               href="../login/"
             >
               Log in
-            </a>
+            </a> */}
             .
           </div>
         </div>
@@ -95,7 +102,7 @@ export default function SignUp() {
               firebase
                 .auth()
                 .createUserWithEmailAndPassword(emailemp, passwordemp)
-                .then(() => alert("Signed Up!"))
+                .then(() => history.push("/employee"))
                 .catch((error) => alert(error.message));
               setEmailemp("");
               setPasswordemp("");
@@ -126,12 +133,18 @@ export default function SignUp() {
           </form>
           <div className="text-grey-dark mt-6">
             Already have an account?
-            <a
+            <Link
+              to={"/loginemployee"}
+              className="no-underline border-b border-indigo-900 text-indigo-900"
+            >
+              Log In
+            </Link>
+            {/* <a
               className="no-underline border-b border-indigo-900 text-indigo-900"
               href="../login/"
             >
               Log in
-            </a>
+            </a> */}
             .
           </div>
         </div>

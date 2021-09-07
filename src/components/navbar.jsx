@@ -1,7 +1,24 @@
 import React from "react";
 import "./index.css";
+import { getAuth, signOut } from "firebase/auth";
+import {auth} from "../firebase";
+import { useAuth } from "../contexts/AuthContext";
+import { FirebaseContext } from "../contexts/FirebaseContext";
+import { useContext } from "react";
+import {useHistory} from "react-router-dom";
 
 function NavBar() {
+
+  const auth = getAuth();
+  const handleClick = () => {
+    signOut(auth).then(() =>{
+      history.push("/")
+    }).catch((error) => {
+      alert("Error!")
+    });
+  }
+  
+
   return (
     <div className="bg-indigo-900">
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
@@ -22,6 +39,7 @@ function NavBar() {
             <a
               href="#responsive-header"
               className="  block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4 "
+              onClick={handleClick}
             >
               Log out
             </a>

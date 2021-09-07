@@ -5,6 +5,7 @@ import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { db } from "../firebase";
+import NavBar from "./navbar";
 
 function RaiseTicketForm() {
   const [editorState, setEditorState] = useState(() =>
@@ -56,108 +57,109 @@ function RaiseTicketForm() {
   };
 
   return (
-    <div className="form-border md:container md:mx-auto pt-16">
-      <p className="text-3xl"> Raise A Ticket</p>
-      <form onSubmit={handleSubmit} action="" className="form">
-        <div className="departhment pt-6">
-          <label
-            htmlFor="department-label"
-            className="form-label text-lg text-gray-600"
-          >
-            Name
-          </label>{" "}
-          <br />
-          <input
-            onChange={handleChange}
-            value={formData.username}
-            type="text"
-            id="username"
-            placeholder="Name"
-            name="username"
-            className="form-input mt-2 w-11/12 border-2 rounded p-2"
-          />
-        </div>
-        <div className="departhment pt-6">
-          <label
-            htmlFor="department-label"
-            className="form-label text-lg text-gray-600"
-          >
-            Product
-          </label>{" "}
-          <br />
-          <input
-            onChange={handleChange}
-            value={formData.product}
-            type="text"
-            id="product-name"
-            placeholder="Product"
-            name="product"
-            className="form-input mt-2 w-11/12 border-2 rounded p-2"
-          />
-        </div>
-        <div className="departhment pt-6">
-          <label
-            htmlFor="department-label"
-            className="form-label text-lg text-gray-600"
-          >
-            Product Code
-          </label>{" "}
-          <br />
-          <input
-            onChange={handleChange}
-            value={formData.code}
-            type="text"
-            id="code"
-            placeholder="Product Code"
-            name="code"
-            className="form-input mt-2 w-11/12 border-2 rounded p-2"
-          />
-          
-        </div>
-        <div className="departhment pt-6">
-          <label
-            htmlFor="department-label"
-            className="form-label text-lg text-gray-600"
-          >
-            Domain
-          </label>{" "}
-          <br />
-          <input
-            onChange={handleChange}
-            value={formData.domain}
-            type="text"
-            id="domain"
-            placeholder="Tech/Design/Finance"
-            name="domain"
-            className="form-input mt-2 w-11/12 border-2 rounded p-2"
-          />
-          
-        </div>
-        <div className="md:container md:mx-auto mt-10">
-          <p className="text-lg text-gray-600 pb-4">Ticket Body</p>
-          <div
-            style={{
-              border: "1px solid grey",
-              padding: "2px",
-              minHeight: "400px",
-            }}
-          >
-            <Editor
-              editorState={editorState}
-              //onChange={setEditorState}
-              onEditorStateChange={setEditorState}
+    <div>
+      <NavBar />
+      <div className="form-border md:container md:mx-auto pt-16">
+        <p className="text-3xl"> Raise A Ticket</p>
+        <form onSubmit={handleSubmit} action="" className="form">
+          <div className="departhment pt-6">
+            <label
+              htmlFor="department-label"
+              className="form-label text-lg text-gray-600"
+            >
+              Name
+            </label>{" "}
+            <br />
+            <input
+              onChange={handleChange}
+              value={formData.username}
+              type="text"
+              id="username"
+              placeholder="Name"
+              name="username"
+              className="form-input mt-2 w-11/12 border-2 rounded p-2"
             />
           </div>
-          <div className="pt-6 pb-10">
-            <button
-              type="submit"
-              className="bg-indigo-900 text-white pt-3 pb-3 pr-6 pl-6 rounded hover:bg-indigo-800"
+          <div className="departhment pt-6">
+            <label
+              htmlFor="department-label"
+              className="form-label text-lg text-gray-600"
             >
-              Submit
-            </button>
+              Product
+            </label>{" "}
+            <br />
+            <input
+              onChange={handleChange}
+              value={formData.product}
+              type="text"
+              id="product-name"
+              placeholder="Product"
+              name="product"
+              className="form-input mt-2 w-11/12 border-2 rounded p-2"
+            />
           </div>
-        </div>
-      </form>
+          <div className="departhment pt-6">
+            <label
+              htmlFor="department-label"
+              className="form-label text-lg text-gray-600"
+            >
+              Product Code
+            </label>{" "}
+            <br />
+            <input
+              onChange={handleChange}
+              value={formData.code}
+              type="text"
+              id="code"
+              placeholder="Product Code"
+              name="code"
+              className="form-input mt-2 w-11/12 border-2 rounded p-2"
+            />
+          </div>
+          <div className="departhment pt-6">
+            <label
+              htmlFor="department-label"
+              className="form-label text-lg text-gray-600"
+            >
+              Domain
+            </label>{" "}
+            <br />
+            <input
+              onChange={handleChange}
+              value={formData.domain}
+              type="text"
+              id="domain"
+              placeholder="Tech/Design/Finance"
+              name="domain"
+              className="form-input mt-2 w-11/12 border-2 rounded p-2"
+            />
+          </div>
+          <div className="md:container md:mx-auto mt-10">
+            <p className="text-lg text-gray-600 pb-4">Ticket Body</p>
+            <div
+              style={{
+                border: "1px solid grey",
+                padding: "2px",
+                minHeight: "400px",
+              }}
+            >
+              <Editor
+                editorState={editorState}
+                //onChange={setEditorState}
+                onEditorStateChange={setEditorState}
+              />
+            </div>
+            <div className="pt-6 pb-10">
+              <button
+                type="submit"
+                className="bg-indigo-900 text-white pt-3 pb-3 pr-6 pl-6 rounded hover:bg-indigo-800"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

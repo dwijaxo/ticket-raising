@@ -7,6 +7,7 @@ import TableRow from "./tableRow";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
 
+
 function Table() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -14,6 +15,8 @@ function Table() {
       setPosts(snapshot.docs.map((doc) => doc.data()));
     });
   }, []);
+
+ 
   return (
     <div>
       <NavBar />
@@ -30,6 +33,7 @@ function Table() {
                     product={nm.product}
                     code={nm.code}
                     domain={nm.domain}
+                    body={nm.body}
                   />
                 ))}
               </table>

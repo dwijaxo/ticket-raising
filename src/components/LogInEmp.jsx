@@ -4,9 +4,9 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FirebaseContext } from "../contexts/FirebaseContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
-export default function LogInAdmin() {
-
+export default function LogInEmp() {
   const [emailemp, setEmailemp] = useState("");
   const [passwordemp, setPasswordemp] = useState("");
   const history = useHistory();
@@ -20,20 +20,21 @@ export default function LogInAdmin() {
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full m-4">
           <h1 className="text-center text-3xl mb-8">Log In</h1>
-          <p className="text-center mb-4 bg-indigo-100">Admin</p>
+          <p className="text-center mb-4 bg-indigo-100">Employee</p>
 
           <form
-          onSubmit={(event) => {
-            // alert("hi");
-            event.preventDefault();
-            firebase
-              .auth()
-              .signInWithEmailAndPassword(emailemp, passwordemp)
-              .then(() => alert("Logged In!"))
-              .catch((error) => alert(error.message));
-            setEmail("");
-            setPassword("");
-          }}>
+            onSubmit={(event) => {
+              // alert("hi");
+              event.preventDefault();
+              firebase
+                .auth()
+                .signInWithEmailAndPassword(emailemp, passwordemp)
+                .then(() => history.push("/employee"))
+                .catch((error) => alert(error.message));
+              setEmailemp("");
+              setPasswordemp("");
+            }}
+          >
             <input
               type="email"
               className="block border-2 border-indigo-100 focus:border-indigo-500 w-full p-3 rounded mb-4"
@@ -65,12 +66,18 @@ export default function LogInAdmin() {
           </form>
           <div className="text-grey-dark mt-6">
             Do not have an account?
-            <a
+            <Link
+              to={"/"}
+              className="no-underline border-b border-indigo-900 text-indigo-900"
+            >
+              Sign Up
+            </Link>
+            {/* <a
               className="no-underline border-b border-indigo-900 text-indigo-900"
               href="../login/"
             >
               Sign up
-            </a>
+            </a> */}
             .
           </div>
         </div>

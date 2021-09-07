@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { FirebaseContext } from "../contexts/FirebaseContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 export default function LogInAdmin() {
 
@@ -29,7 +30,7 @@ export default function LogInAdmin() {
             firebase
               .auth()
               .signInWithEmailAndPassword(email, password)
-              .then(() => alert("Logged In!"))
+              .then(() => history.push("/admin"))
               .catch((error) => alert(error.message));
             setEmail("");
             setPassword("");
@@ -65,12 +66,18 @@ export default function LogInAdmin() {
           </form>
           <div className="text-grey-dark mt-6">
             Do not have an account?
-            <a
+            <Link
+              to={"/"}
+              className="no-underline border-b border-indigo-900 text-indigo-900"
+            >
+              Sign Up
+            </Link>
+            {/* <a
               className="no-underline border-b border-indigo-900 text-indigo-900"
               href="../login/"
             >
               Sign up
-            </a>
+            </a> */}
             .
           </div>
         </div>
