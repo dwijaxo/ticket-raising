@@ -1,17 +1,20 @@
 import React from "react";
 import "./index.css";
-import { getAuth, signOut } from "firebase/auth";
+// import { signOut } from "firebase/compat/auth";
+// import firebase from "firebase/app";
+// import "firebase/auth";
 import {auth} from "../firebase";
-import { useAuth } from "../contexts/AuthContext";
-import { FirebaseContext } from "../contexts/FirebaseContext";
-import { useContext } from "react";
+// import { useAuth } from "../contexts/AuthContext";
+// import { FirebaseContext } from "../contexts/FirebaseContext";
+// import { useContext } from "react";
 import {useHistory} from "react-router-dom";
 
 function NavBar() {
 
-  const auth = getAuth();
+    const history = useHistory();
+  // const Auth = firebase.auth();
   const handleClick = () => {
-    signOut(auth).then(() =>{
+    auth.signOut().then(() =>{
       history.push("/")
     }).catch((error) => {
       alert("Error!")

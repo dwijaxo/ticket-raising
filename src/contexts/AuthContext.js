@@ -66,6 +66,7 @@ function useProvideAuth() {
   }, [firebase]);
 
 
+  
   return {
     isLoading,
     user,

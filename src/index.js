@@ -6,6 +6,7 @@ import {firebase} from './firebase';
 import "./components/index.css";
 
 
+
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseContext.Provider value ={{firebase}}>
