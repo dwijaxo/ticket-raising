@@ -93,7 +93,7 @@ export default function SignUp() {
 
         <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full m-4">
           <h1 className="text-center text-3xl mb-8">Sign Up</h1>
-          <p className="text-center mb-4 bg-indigo-100">Admin</p>
+          <p className="text-center mb-4 bg-indigo-100">Employee</p>
 
           <form
             onSubmit={(event) => {
